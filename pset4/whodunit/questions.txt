@@ -1,0 +1,12 @@
+1.  This header defines a set of integral type aliases with specific width requirements, along with macros specifying their limits and macro functions to create values of these types.
+2.  For the specific data , such as rgbtBlue, biSize, and bfType , They are different size. 
+3.  BYTE = 8bit(1Byte), DWORD = 32bit(4Byte), LONG = 32bit(Byte), WORD = 16bit(2Byte).
+4.  BITMAPFILEHEADER and BITMAPINFOHEADER
+5.  One is WORD type , another is DWORD , which mean they have different size of data.
+6.  The bitmap is a top-down DIB with the origin at the upper left corner, which also mean it's uncompressed file.
+7.  biBitCount
+8.  You may not have enough space in memory to store that pointer , or you don't have permission to access that file , or there is a existent file with same name , or that file is broken or missing while using it.
+9.  Because we just use a size of BITMAPFILEHEADE, there is no need for a number more than one.
+10. is 3
+11. Skip over padding, if any
+12. SEEK_CUR is a constant that is a current position of the file pointer.
