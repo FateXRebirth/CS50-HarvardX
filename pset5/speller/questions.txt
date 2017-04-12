@@ -1,0 +1,7 @@
+0.  an invented long word said to mean a lung disease caused by inhaling very fine ash and sand dust.
+1.  To get the used resource when executing , such as CPU time , memory size , in/out put operation , and so on.
+2.  16
+3.  The function getrusage , its resource usages are returned in the structure pointed to by usage , so before and after must be used as a pointer , and shouldn't be changed anything.
+4.  first of all, the for loop will keep going charater by charater. secondly, if it find alphabetical and apostrophes , it will start to store that until it ends. Thirdly, if it find a word with numbers, it will ignore that. 
+5.  if we use fscanf in stead of fgets, we might find some words including number or symbol or notation. that problem will make our implement more complicated.
+6.  Use const declaration in case we change the value of original data or do something wrong to memory allocation. 
