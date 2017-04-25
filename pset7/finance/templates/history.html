@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for history in histories %}
+                <tr>
+                    {% if func(history.share) == 1 %}
+                        <td> Buy </td>
+                    {% elif func(history.share) == -1 %}
+                        <td> Sell </td>
+                    {% else %}
+                        <td> Deposit </td>
+                    {% endif %} 
+                    
+                    {% if history.share == 0 %}
+                        <td> </td>
+                    {% else %}
+                        <td>{{ history.symbol }}</td>
+                    {% endif %}
+                    
+                    {% if history.share == 0 %}
+                        <td> </td>
+                    {% else %}
+                        <td>{{ history.share }}</td>
+                    {% endif %}
+                    
+                    <td>{{ history.price }}</td>
+                    <td>{{ history.time }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <form action="/history" method="post" style="text-align:right;">
+        <fieldset>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Clear History</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}
